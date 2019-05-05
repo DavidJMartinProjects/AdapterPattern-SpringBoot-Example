@@ -34,11 +34,8 @@ public class PhoneChargingStationApp implements ApplicationRunner {
 	}
 	
 	private void displayMenu() {
-
 		int userChoice = 1000;
-		
 		while(userChoice!=0) {
-			
 			System.out.println("Select Phone to Charge : ");
 			System.out.println("1. Iphone");
 			System.out.println("2. Samsung");
@@ -46,19 +43,16 @@ public class PhoneChargingStationApp implements ApplicationRunner {
 			userChoice = myScanner.nextInt();
 			
 			switch (userChoice) {
-			case 1:
-				chargePhone(iphoneConfig);	
-				break;
-				
-			case 2:
-				chargePhone(samsungConfig);	
-				break;
-
-			default:
-				break;
+				case 1:
+					chargePhone(iphoneConfig);	
+					break;
+				case 2:
+					chargePhone(samsungConfig);	
+					break;
+				default:
+					break;
 			}
 		}
-		
 	}
 
 	public void chargePhone(PhoneNotificationConfig phoneNotificationConfig) {		
