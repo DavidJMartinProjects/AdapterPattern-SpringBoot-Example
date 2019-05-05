@@ -4,5 +4,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ChargingStationService {
-	String chargePhone(PhoneNotificationConfig phoneConfigMessages);
+	String displayChargingNotification(PhoneNotificationConfig phoneConfigMessages);
 }

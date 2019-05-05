@@ -1,37 +1,19 @@
 package com.chargingstation.baseapplication;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Component;	
 
 @Primary
 @Component("iphone")
 public class IphoneConfig implements PhoneNotificationConfig {
-
+	
+	@Autowired
+	IphoneAsciiLogo iphoneAsciiLogo;
+	
 	@Override
 	public String getChargingNotification() {
-		String logo = 
-				"                                                                                                                                                               \r\n" + 
-				"                                                                                                                                                               \r\n" + 
-				"                                                                               /@@                                                                             \r\n" + 
-				"                                                                             @@@@@                                                                             \r\n" + 
-				"                                                                            @@@@@                                                                              \r\n" + 
-				"                                                                           %@@&                                                                                \r\n" + 
-				"                                                                   #@@@@#     (@@@@@&,                                                                         \r\n" + 
-				"                                                                (@@@@@@@@@@@@@@@@@@@@@@%                                                                       \r\n" + 
-				"                                                               @@@@@@@@@@@@@@@@@@@@@@@#                                                                        \r\n" + 
-				"                                                              @@@@@@@@@@@@@@@@@@@@@@@/                                                                         \r\n" + 
-				"                                                             *@@@@@@@@@@@@@@@@@@@@@@&                                                                          \r\n" + 
-				"                                                             /@@@@@@@@@@@@@@@@@@@@@@&                                                                          \r\n" + 
-				"                                                             .@@@@@@@@@@@@@@@@@@@@@@@*                                                                         \r\n" + 
-				"                                                              &@@@@@@@@@@@@@@@@@@@@@@@/                                                                        \r\n" + 
-				"                                                               @@@@@@@@@@@@@@@@@@@@@@@@@@.                                                                     \r\n" + 
-				"                                                               .@@@@@@@@@@@@@@@@@@@@@@@@*                                                                      \r\n" + 
-				"                                                                 @@@@@@@@@@@@@@@@@@@@@@                                                                        \r\n" + 
-				"                                                                  &@@@@@@@@@@@@@@@@@@@                                                                         \r\n" + 
-				"                                                                    /@@@&.    .%@@@#                                                                           \r\n" + 
-				"                                                                                                                                                               \r\n" + 
-				"                                                                                                                                                               ";
-		return logo + "\n Iphone is charging...";
+		return iphoneAsciiLogo.getLogo() + "\n Iphone is charging...";
 	}
 
 	@Override

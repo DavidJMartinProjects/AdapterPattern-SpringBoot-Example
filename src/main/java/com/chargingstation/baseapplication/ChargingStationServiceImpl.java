@@ -10,11 +10,9 @@ public class ChargingStationServiceImpl implements ChargingStationService {
 	ChargingStation chargingStation;
 
 	@Override
-	public String chargePhone(PhoneNotificationConfig phoneConfigMessages) {
+	public String displayChargingNotification(PhoneNotificationConfig phoneConfigMessages) {
 		chargingStation.setPhoneNotificationConfig(phoneConfigMessages);
 		return chargingStation.displayChargingNotification();
 	}
 	
-	
-
 }

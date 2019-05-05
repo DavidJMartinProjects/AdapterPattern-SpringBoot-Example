@@ -1,6 +1,5 @@
 package com.chargingstation.application;
 
-import java.io.InputStream;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,10 +43,10 @@ public class PhoneChargingStationApp implements ApplicationRunner {
 			
 			switch (userChoice) {
 				case 1:
-					chargePhone(iphoneConfig);	
+					displayChargingNotification(iphoneConfig);	
 					break;
 				case 2:
-					chargePhone(samsungConfig);	
+					displayChargingNotification(samsungConfig);	
 					break;
 				default:
 					break;
@@ -55,9 +54,9 @@ public class PhoneChargingStationApp implements ApplicationRunner {
 		}
 	}
 
-	public void chargePhone(PhoneNotificationConfig phoneNotificationConfig) {		
-		System.out.println(chargingStationService.chargePhone(phoneNotificationConfig));
+	public void displayChargingNotification(PhoneNotificationConfig phoneNotificationConfig) {		
+		System.out.println(chargingStationService.displayChargingNotification(phoneNotificationConfig));
 	}
-	
+		
 }
 	
