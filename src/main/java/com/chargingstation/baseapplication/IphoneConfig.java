@@ -2,23 +2,22 @@ package com.chargingstation.baseapplication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;	
+import org.springframework.stereotype.Component;
+
+import com.chargingstation.baseapplication.util.FileReaderUtil;	
 
 @Primary
 @Component("iphone")
-public class IphoneConfig implements PhoneNotificationConfig {
+public class IphoneConfig implements PhoneNotificationConfig {	
 	
 	@Autowired
-	IphoneAsciiLogo iphoneAsciiLogo;
+	FileReaderUtil fileReaderUtil;
+	
+	String filePath = "samsungLogo.txt";
 	
 	@Override
 	public String getChargingNotification() {
-		return iphoneAsciiLogo.getLogo() + "\n Iphone is charging...";
+		return fileReaderUtil.extractLogoFromTextFile(filePath) + "\n Iphone is charging...";
 	}
 
-	@Override
-	public String getChargedNotification() {
-		return "Iphone is fully charged.";
-	}
-	
 }

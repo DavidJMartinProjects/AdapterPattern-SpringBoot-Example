@@ -11,8 +11,7 @@ public class ChargingStationServiceImpl implements ChargingStationService {
 
 	@Override
 	public String displayChargingNotification(PhoneNotificationConfig phoneConfigMessages) {
-		chargingStation.setPhoneNotificationConfig(phoneConfigMessages);
-		return chargingStation.displayChargingNotification();
+		return chargingStation.displayChargingNotification(phoneConfigMessages);
 	}
 	
 }

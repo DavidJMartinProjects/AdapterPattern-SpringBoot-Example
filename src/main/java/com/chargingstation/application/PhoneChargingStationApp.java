@@ -29,7 +29,7 @@ public class PhoneChargingStationApp implements ApplicationRunner {
 		
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		displayMenu();
+//		displayMenu();
 	}
 	
 	private void displayMenu() {

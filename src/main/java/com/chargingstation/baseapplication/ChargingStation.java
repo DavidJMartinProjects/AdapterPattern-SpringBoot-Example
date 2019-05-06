@@ -8,19 +8,10 @@ public class ChargingStation implements DisplayConsoleNotifications {
 	
 	@Autowired
 	PhoneNotificationConfig phoneNotificationConfig;
-	
-	public void setPhoneNotificationConfig(PhoneNotificationConfig phoneNotificationConfig) {
-		this.phoneNotificationConfig = phoneNotificationConfig;
-	}
 
 	@Override
-	public String displayChargingNotification() {
+	public String displayChargingNotification(PhoneNotificationConfig phoneNotificationConfig) {
 		return phoneNotificationConfig.getChargingNotification();		
 	}
-
-	@Override
-	public void displayChargedNotification() {
-		phoneNotificationConfig.getChargedNotification();
-	}	
 
 }

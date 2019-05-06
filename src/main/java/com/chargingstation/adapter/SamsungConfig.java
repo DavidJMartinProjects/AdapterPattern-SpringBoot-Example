@@ -3,14 +3,18 @@ package com.chargingstation.adapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.chargingstation.adapter.util.ZipFileReaderUtil;
+
 @Component
-public class SamsungConfig {
+public class SamsungConfig {	
 	
 	@Autowired
-	SamsungAsciiLogo samsungAsciiLogo;
+	ZipFileReaderUtil zipFileReaderUtil;
+	
+	String zipFileLocation = "src/main/resources/samsungLogo.zip";
 
 	public String showChargingInitMsg() {
-		return samsungAsciiLogo.getLogo() + "\n Samsung is charging...";
+		return zipFileReaderUtil.extractLogoFromZipFile(zipFileLocation) + "\n Samsung is charging...";
 	}
 
 	public String showChargingCompleteMsg() {

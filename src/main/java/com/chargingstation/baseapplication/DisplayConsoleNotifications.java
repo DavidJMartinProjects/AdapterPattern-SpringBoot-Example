@@ -4,6 +4,5 @@ import org.springframework.stereotype.Service;
 
 @Service	
 public interface DisplayConsoleNotifications {
-	String displayChargingNotification();
-	void displayChargedNotification();
+	String displayChargingNotification(PhoneNotificationConfig phoneNotificationConfig);
 }

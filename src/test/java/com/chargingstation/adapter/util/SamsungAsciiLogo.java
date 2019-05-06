@@ -1,4 +1,4 @@
-package com.chargingstation.adapter;
+package com.chargingstation.adapter.util;
 
 import org.springframework.stereotype.Component;
 

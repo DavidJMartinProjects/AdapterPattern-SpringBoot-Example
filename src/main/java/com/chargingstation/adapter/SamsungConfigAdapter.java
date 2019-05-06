@@ -16,9 +16,4 @@ public class SamsungConfigAdapter implements PhoneNotificationConfig {
 		return samsungConfig.showChargingInitMsg();
 	}
 
-	@Override
-	public String getChargedNotification() {
-		return samsungConfig.showChargingCompleteMsg();
-	}
-	
 }
